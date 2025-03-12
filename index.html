@@ -1,31 +1,89 @@
 <!-- Unit 9 Project
 Requirements
-[  ] Add if() statement
-[  ] Add random(.., ..)
-[  ] Add Custom Function
+[ yes ] Add if() statement
+[ yes ] Add random(.., ..)
+[ yes ] Add Custom Function
 [  ] Three new HTML elements/CSS Declarations
 
 Select ONE Additional 
 [ no ] Feature 1 - Include mouseX and mouseY
 [ no ] Feature 2 - Include KeyPressed feature
 [ no ] Feature 3 - Include Animation 
-[ no ] Feature 4 - Include Logical Operators && or || 
+[ yes ] Feature 4 - Include Logical Operators && or || 
 -->
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Unit 9 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
-    <style></style>
+    <style>
+      @font-face {
+        font-family: cherry;
+        src: url(https://cdn.glitch.global/49a55dee-ff56-4476-8980-0e5d6d2561d6/Cherry%20Ai.ttf?v=1741620544229);
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        font-family: cherry;
+        font-size: 48px;
+        text-align: center;
+        color: #333;
+      }
+
+      .cherry {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      .cherry:after {
+        content: '';
+        width: 10px;
+        height: 20px;
+        background-color: green;
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        border-radius: 50%;
+      }
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+      }
+
+      canvas {
+        display: block;
+        margin-top: 20px;
+        border: 1px solid black;
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Magic 8 Ball</h1>
+    <h1>Ask a Question...</h1>
+    <div class="cherry"></div>
     <canvas id="myCanvas" data-processing-sources="myP5Code.pde"> </canvas>
   </body>
 </html>
